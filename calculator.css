@@ -1,0 +1,191 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+nav {
+    background: linear-gradient(to bottom, blue, yellow); /* Create the gradient from blue to yellow */
+    padding: 10px;
+    position: fixed; /* Keep navbar fixed at the top */
+    top: 0; /* Position it at the top */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Make it span the full width */
+    z-index: 1000; /* Ensures it's above other elements */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 8px 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Display styles */
+.calculator {
+    margin-top: 100px; /* Adjusted for better spacing from navbar */
+    padding: 10px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-template-rows: repeat(6, 100px); /* 6 rows with 100px height for each button */
+    grid-gap: 0px; /* Adds space between buttons */
+    grid-template-areas:
+        "calc-display calc-display calc-display calc-display" 
+        "clear-btn clear-btn cancel-btn divide-btn"
+        "seven-btn eight-btn nine-btn multiply-btn"
+        "four-btn five-btn six-btn minus-btn"
+        "one-btn two-btn three-btn plus-btn"
+        "zero-btn zero-btn zero-btn equal-btn";
+}
+
+/* Calculator display */
+#calc-display {    
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    text-align: right;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 20px;
+    grid-area: calc-display;
+}
+
+/* Button styles */
+button {
+    font-size: 1.5em;
+    background-color: rgb(216, 217, 219);
+    color: black;
+    border: 1.5px solid black;
+    box-sizing: border-box;
+    width: 100%; /* Ensure buttons take up full grid cell width */
+    height: 100%; /* Ensure buttons fill grid cell height */
+    cursor: pointer;
+}
+
+/* Operator button styles */
+.operators {
+    background-color: rgb(223, 151, 76);   
+    color: white;
+}
+
+/* Special button hover effects */
+button:hover {
+    background-color: rgb(206, 207, 209);
+}
+
+button:active {
+    background-color: rgb(196, 197, 199);
+}
+
+.operators:hover {
+    background-color: rgb(193, 131, 66);
+}
+
+.operators:active {
+    background-color: rgb(163, 111, 56);
+}
+
+/* Grid item button areas */
+#clear-btn {
+    grid-area: clear-btn;
+    border-left: none;
+}
+
+#cancel-btn {
+    grid-area: cancel-btn;
+}
+
+#divide-btn {
+    grid-area: divide-btn;
+    border-right: none;
+}
+
+#seven-btn {
+    grid-area: seven-btn;
+    border-left: none;
+}
+
+#eight-btn {
+    grid-area: eight-btn;
+}
+
+#nine-btn {
+    grid-area: nine-btn;
+}
+
+#multiply-btn {
+    grid-area: multiply-btn;
+    border-right: none;
+}
+
+#four-btn {
+    grid-area: four-btn;
+    border-left: none;
+}
+
+#five-btn {
+    grid-area: five-btn;
+}
+
+#six-btn {
+    grid-area: six-btn;
+}
+
+#minus-btn {
+    grid-area: minus-btn;
+    border-right: none;
+}
+
+#one-btn {
+    grid-area: one-btn;
+    border-left: none;
+}
+
+#two-btn {
+    grid-area: two-btn;
+}
+
+#three-btn {
+    grid-area: three-btn;
+}
+
+#plus-btn {
+    grid-area: plus-btn;
+    border-right: none;
+}
+
+#zero-btn {
+    grid-area: zero-btn;
+    border-bottom: none;
+    border-left: none;    
+}
+
+#equal-btn {
+    grid-area: equal-btn;
+    border-right: none;
+    border-bottom: none;
+}
+
+/* To Do: look into customizing design for TAB. Seems like now it is default for button. 

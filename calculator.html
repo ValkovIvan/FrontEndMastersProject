@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./calculator.css" />
+</head>
+<body>
+    <nav class="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Ivan</a></li>
+            <li><a href="news.html">Latest Local News</a></li>
+            <li><a href="coffeeShop.html">Tired? Go here to order Coffees</a></li>
+            <li><a href="calculator.html">Calculator</a></li>            
+            <li><a href="wordMasters.html">Word Masters Game</a></li>
+        </ul>
+    </nav>
+    <div class="calculator">        
+        <input type="text" name="display" id="calc-display" value="0" readonly>
+        <button type="button" id="clear-btn" onclick="calculator.display.value = ''">C</button>
+        <button type="button" id="cancel-btn" onclick="calculator.display.value = ''">&#8592;</button>  <!-- Back arrow -->
+        <button type="button" id="divide-btn" class="operators" onclick="calculator.display.value += '/'">/</button>
+        
+        <button type="button" id="seven-btn" onclick="calculator.display.value += '7'">7</button>
+        <button type="button" id="eight-btn" onclick="calculator.display.value += '8'">8</button>
+        <button type="button" id="nine-btn" onclick="calculator.display.value += '9'">9</button>
+        <button type="button" id="multiply-btn" class="operators" onclick="calculator.display.value += '*'">*</button>
+        
+        <button type="button" id="four-btn" onclick="calculator.display.value += '4'">4</button>
+        <button type="button" id="five-btn" onclick="calculator.display.value += '5'">5</button>
+        <button type="button" id="six-btn" onclick="calculator.display.value += '6'">6</button>
+        <button type="button" id="minus-btn" class="operators" onclick="calculator.display.value += '-'">-</button>
+        
+        <button type="button" id="one-btn" onclick="calculator.display.value += '1'">1</button>
+        <button type="button" id="two-btn" onclick="calculator.display.value += '2'">2</button>
+        <button type="button" id="three-btn" onclick="calculator.display.value += '3'">3</button>
+        <button type="button" id="plus-btn" class="operators" onclick="calculator.display.value += '+'">+</button>
+        
+        <button type="button" id="zero-btn" onclick="calculator.display.value += '0'">0</button>
+        <button type="button" id="equal-btn" class="operators" onclick="calculate()">=</button>
+    </div>
+    <!-- Reference to external JavaScript file -->
+    <script src="./calculator.js"></script>    
+</body>
+</html>

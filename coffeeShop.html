@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Checkout</title>    
+    <link rel="stylesheet" href="./stylesCoffeeShop.css" />
+</head>
+<body>
+    <header class="brand-header">
+        <!-- <div class="back-button-container">
+            <a href="index.html"> 
+                <img class="back-btn" src="images/BackArrow.png" alt="Back"></img>
+            </a>
+        </div> -->
+        <img class="logo" src="images/coffee_masters_logo.png" alt="Logo"></img>
+        <h1 class="page-title">Coffee Masters</h1>
+    </header>
+    <main class="main-page">
+        <section class="items-section">
+            <h4 class="section-title-name">ITEMS</h4>
+            <ul class="order-list">
+                <li class="order-item">
+                    <div class="item-qty">1x</div>
+                    <div class="item-name">Cappuccino</div>
+                    <div class="item-price">$3.35</div>
+                    <div class="item-details-list">
+                        <p class="item-details">Lite foam</p>
+                    </div>
+                    
+                </li>
+                <li class="order-item">
+                    <div class="item-qty">1x</div>
+                    <div class="item-name">Cappuccino</div>
+                    <div class="item-price">$3.85</div>
+                    <div class="item-details-list">
+                        <p class="item-details">Lite milk</p>
+                        <p class="item-details">Double espresso</p>
+                    </div>
+                    
+                </li>
+                <li class="order-item">
+                    <div class="item-qty">1x</div>
+                    <div class="item-name">Croissant</div>
+                    <div class="item-price">$2.45</div>
+                    <div class="item-details-list">
+                        <p class="item-details">Butter</p>
+                    </div>
+                    
+                </li>
+            </ul>
+        </section>
+        <section class="name-section">
+            <h4 class="section-title-name">NAME</h4>
+            <div class="input-container">
+                <label for="name-input" class="placeholder">Name for order</label>
+                <input type="text" class="input" id="name-input"></input>
+            </div>
+            
+        </section>
+        <section class="payment-section">
+            <h4 class="section-title-name">PAYMENT</h4>
+            <div class="input-container">
+                <label for="cc-input" class="placeholder">Card number</label>
+                <input type="text" class="input" id="cc-input" maxlength="19"></input>                
+            </div>  
+            <div class="input-container">
+                <label for="ccv-input" class="placeholder">CCV Number</label>
+                <input type="text" class="input" id="ccv-input" maxlength="4"></input>
+            </div>              
+            
+        </section>
+        <section class="order-summary-section">
+            <ul class="order-summary-list">
+                <li class="subtotal">
+                    <div>Subtotal:</div>
+                    <div>$9.65</div>
+                </li>
+                <li class="tax">
+                    <div>Tax:</div>
+                    <div>$0.82</div>
+                </li>
+                <li class="total">
+                    <div>Total:</div>
+                    <div>$10.47</div>
+                </li>
+            </ul>
+            <button class="submit-btn">Place order</button>
+        </section>
+    </main>
+</body>
+</html>

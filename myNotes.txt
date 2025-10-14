@@ -1,0 +1,9 @@
+Please add all the to do items/ideas here:
+
+1. AJAX - requesting data from server without refreshing the page. Like when you scrol the list and there is a button to load more. When you click on it you get an extra amount of items, etc.
+2. I need to add some kind of site visitor tracking: IP, date/time, and maybe convert it into something readable
+3. Add some sort of delay handling, like spinners.
+4. What security features do I need to add? TBC
+5. Add tests to my project
+6. Add dropdowns
+7. Add visual effects

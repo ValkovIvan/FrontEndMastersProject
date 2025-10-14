@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: serif;
+    font-size: 40px;
+    font-weight: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: none;
+    text-align: center;
+}
+
+.section-link {
+    text-decoration: none;
+}
+
+.nav-links {
+    grid-area: nav-links;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: 1px solid black;
+    /* border-collapse: collapse; */
+    /* border-radius: 5px; */
+    display: inline-flex;
+    justify-content: space-around; /* Distributes items with equal space between them */
+}
+
+.site-section {
+    list-style: none; /* Optional: Removes default bullet points */    
+    margin: 5px; /* Optional: Removes default margin */
+    padding: 5px 10px; /* Adds spacing around the content */
+    text-align: center; /* Optional: Aligns text inside */
+    border: 2px solid transparent;
+}
+
+.site-section:hover {
+    border: 2px solid grey; /* Change the border color on hover */
+    text-decoration: underline;
+    text-decoration-color: rgb(0, 71, 171);
+}
+
+.brand { 
+    /* color: rgb(112, 128, 144); */
+    color: rgb(0, 71, 171);
+    
+}
+
+.page{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "brand-header brand-header brand-header" 
+        "nav-links nav-links nav-links"
+        "story-1 story-2 story-3"
+        "story-4 story-5 story-5";
+}
+
+.brand-header{
+    grid-area: brand-header;
+}
+
+.story {
+    border: 1px solid black;
+    /* border-collapse: collapse; */
+}
+
+.article-title {
+    text-align: center;
+    font-style: italic;
+}
+
+.article-text {
+    text-align: left;
+}
+
+.article-img {
+    display: block;     /* Make the image behave like a block element */
+    margin: 0 auto;
+    width: 50%;    /* Image will take up 100% of its container's width */
+    height: auto;   /* Height will adjust automatically to maintain aspect ratio */    
+}
+
+article {
+    display: flex;
+    flex-direction: column; 
+    padding: 10px; /* Adds space inside each article */
+}
+
+.story-1{    
+    grid-area: story-1;
+}
+
+.story-2{    
+    grid-area: story-2;
+}
+.story-3{    
+    grid-area: story-3;
+}
+.story-4{    
+    grid-area: story-4;
+}
+.story-5{    
+    grid-area: story-5;
+}

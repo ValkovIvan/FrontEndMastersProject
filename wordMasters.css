@@ -1,0 +1,183 @@
+/* Navbar Styles */
+nav {
+    background: linear-gradient(to bottom, blue, yellow); /* Create the gradient from blue to yellow */
+    padding: 10px;
+    position: fixed; /* Keep navbar fixed at the top */
+    top: 0; /* Position it at the top */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Make it span the full width */
+    z-index: 1000; /* Ensures it's above other elements */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 8px 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Page with the Game */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+h1 {
+    margin: 20px 0 10px; /* Add some space around the title */
+    text-align: center;  /* Center the text horizontally */
+    width: 100%;         /* Ensure it spans the full width */
+}
+hr {
+    width: 90%;
+    max-width: 800px;
+    border: 1px solid #000;
+}
+.grid {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    gap: 10px; /* Add space between rows */
+    margin-top: 20px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 equal columns for the row */
+    gap: 10px; /* Add space between columns */
+}
+
+.row input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.row input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.row input[disabled] {
+    background-color: #f2f2f2; /* Light gray for disabled inputs */
+    cursor: not-allowed;
+}
+/* Banner styling */
+.banner { 
+    background-color: #e9303f; 
+    color: rgb(248, 7, 7); 
+    padding: 10px; 
+    text-align: center; 
+    display: none; 
+    font-weight: bold; 
+    max-height: 60px;           /* limit how tall banner can grow */
+    overflow-y: auto;           /* scroll if message is too long */
+} /* Default Banner */
+
+/* Banner type classes */
+.banner-success {
+    background-color: #d4edda;
+    color: #155724;
+    font-weight: normal;
+}
+
+.banner-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: normal;
+}
+
+.banner-info {
+    background-color: #fff3cd;
+    color: #856404;
+    font-weight: normal;
+}
+/* Only background color changes for highlights */
+input.correct {
+    background-color: #d4edda; /* green background */
+}
+
+input.partial {
+    background-color: #fff3cd; /* yellow background */
+}
+
+input.wrong {
+    background-color: #d6d8d9; /* red background */
+}
+/* My Spinner style */
+/* Spinner container — same size and position as banner */
+#spinner {
+    display: none;            /* hide by default */
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;       /* center the spinning circle inside */
+    margin: 10px auto;        /* center the spinner horizontally */
+    width: fit-content;       /* make the container shrink to the content */
+}
+
+/* Actual spinning circle */
+.spinner-circle {
+    width: 30px;
+    height: 30px;
+    border: 4px solid #ccc;
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;           /* center the circle inside the spinner container */
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* some animation for winners */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #f7e018;
+    top: 0;
+    left: 50%;
+    opacity: 0.7;
+    pointer-events: none;
+    animation: confetti-fall 2s linear forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(-50vw + 100px)) translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}

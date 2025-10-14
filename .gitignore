@@ -1,5 +1,7 @@
 # Ignore node modules
 node_modules/
+myNotes.txt
+
 
 # Ignore build artifacts
 dist/

@@ -1,0 +1,195 @@
+:root {
+  --nav-height: 78px;
+  --container-max: 980px;
+  --gap: 16px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.main-nav .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    min-height: 40px;
+    text-decoration: none;
+    padding: 8px 12px;
+    background: linear-gradient(180deg, #0a6fd0 0%, #0078d4 100%);
+    color: #ffffff;
+    border-radius: 8px;
+    font: 600 0.95rem/1.2 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 2px 6px rgba(2,6,23,0.12);
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.main-nav .nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(2,6,23,0.18);
+  background: linear-gradient(180deg, #1489e3 0%, #0078d4 100%);
+}
+/* Active (pressed) */
+.main-nav .nav-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(2,6,23,0.14);
+}
+/* Focus (keyboard) - visible ring */
+.main-nav .nav-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,120,212,0.18), 0 6px 18px rgba(2,6,23,0.12);
+  border-color: rgba(255,255,255,0.28);
+}
+/* Disabled state */
+.main-nav .nav-btn[disabled],
+.main-nav .nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+/* Current page modifier (use aria-current="page" on the active link) */
+.main-nav .nav-btn[aria-current="page"] {
+  background: linear-gradient(180deg, #004e8a 0%, #003f6b 100%);
+}
+
+/* ensure logo + title sit on one row */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-brand h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* make sure logo fits without increasing header height */
+.logo {
+  height: calc(var(--nav-height) - 16px);
+  width: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* container uses the variable */
+.container{
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-header {
+  /* Ukrainian flag gradient: blue (top) -> yellow (bottom) */
+  /* background: linear-gradient(to bottom, #0057B7 0%, #FFD700 100%); */
+  /* northern lights gradient */
+  background: linear-gradient(
+    135deg,
+    #04132B 0%,
+    #002A4A 8%,
+    #00FF9C 28%,
+    #00B3A6 44%,
+    #00E5FF 60%,
+    #7B2FF7 78%,
+    #FF5DA2 92%
+  );
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);   /* explicit height so header doesn't grow */
+  z-index: 1002;               /* keep header above overlay/content */
+  overflow: hidden;
+  /* background: transparent; */
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.site-header nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  box-sizing: border-box;
+  color: inherit; /* let children decide text color */
+}
+
+/* Ensure header and main sit above the overlay */
+.site-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.692); /* light divider for dark backgrounds */
+  /* or: border-bottom: 1px solid rgba(0,0,0,0.08); for light backgrounds */
+  z-index: 1002; /* keep header above overlay */
+}
+
+/* style the intro block under the header */
+.intro {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  background: rgba(255,255,255,0.85); /* light card so text is readable over background */
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  color: #111;
+}
+
+.intro h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+/* push content below fixed header - use main margin instead of body padding */
+body {
+  background-color: #f3f4f6;
+  background-image: url("assets/images/blogBackgrownd.jpg");
+  background-repeat: no-repeat;
+  background-position: top center; /* start at top so image scrolls down with content */
+  background-size: cover;         /* or use 'contain' if you want the whole image visible */
+  background-attachment: scroll;  /* <-- make it scroll with the page (remove this line to use default) */
+  color: #fff; /* light default so text is readable over the image */
+}
+
+/* ensure overlay sits under content */
+body::before {
+  z-index: 0;
+}
+
+/* push page content below the fixed header */
+main#main,
+main.container {
+  margin-top: var(--nav-height);
+  position: relative;
+  z-index: 1001; /* content above overlay but below header if needed */
+}
+
+/* responsive: stack nav links on small screens */
+@media (max-width:640px){
+  .site-nav{ flex-wrap:wrap; gap:8px; }
+  .nav-links{ width:100%; display:flex; gap:12px; overflow:auto; }
+}
+
+/* Responsive — images scale but don't exceed width */
+.post-attachment {
+  display: block;
+  width: 100%;         /* fill container */
+  max-width: 800px;    /* max desired width */
+  height: auto;        /* keep original aspect ratio */
+  margin: 1rem 0;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+/* Optional: use light cards for post content for best readability */
+.post-card, .intro, .blog-posts > article {
+  background: rgba(255,255,255,0.92);
+  color: #111;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}

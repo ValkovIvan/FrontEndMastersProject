@@ -1,0 +1,15 @@
+# Ignore node modules
+node_modules/
+myNotes.txt
+
+
+# Ignore build artifacts
+dist/
+build/
+
+# Ignore environment files
+.env
+
+# Ignore system files
+.DS_Store
+Thumbs.db
